@@ -4,3 +4,19 @@ on :   #ESEGUI QUANDO PUSHO SU MASTER
 
 
     #COMMENTO
+permissions:
+contents: read #PIPELINE AUTORIZZATA A LEGGERE CONTENUTI
+pages: write  
+id-token: write
+#github crea macchina virtuale fa lavori e carica il sito
+jobs: 
+  deploy:
+  runs-on: ubuntu-latest
+  environment:
+  neame: github-pages
+  steps:
+  -uses: actions/checkout@v4
+  -uses: action/upload-pages-artifacr@v3
+  with:
+  path: .
+  -uses: actions/deploy-pages@v4
