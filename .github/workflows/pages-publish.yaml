@@ -1,0 +1,6 @@
+on :   #ESEGUI QUANDO PUSHO SU MASTER
+    push:
+    branches: [master] 
+
+
+    #COMMENTO
